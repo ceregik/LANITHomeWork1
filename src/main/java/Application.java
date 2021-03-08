@@ -5,6 +5,9 @@ public class Application {
         Kotik kotik1 = new Kotik();
         Kotik kotik2 = new Kotik(10, "Vlad", 3, "Meeeow");
 
+        System.out.println(kotik2.getWeight());
+        System.out.println(kotik2.getPrettiness());
+
         kotik1.setKotik(9, "Bob", 2, "Meow");
 
         kotik2.eat(50);

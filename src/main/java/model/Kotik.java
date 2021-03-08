@@ -29,6 +29,7 @@ public class Kotik {
 
     public void liveAnotherDay(){
         for (int i=0; i<24;i++){
+            System.out.print((i+1) + " ");
             switch ((int)(Math.random()*5 + 1)){
                 case 1: play();
                     break;
@@ -62,7 +63,7 @@ public class Kotik {
 
     public void eat(String nameFood , int food ){
         satiety += food;
-        System.out.println("I`m " +satiety + " eat");
+        System.out.println("I`m " +satiety + " eat" + nameFood);
     }
 
     public void eat(){
