@@ -10,7 +10,7 @@ public class Giraffe extends  Vegan implements  Run,Voice{
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         System.out.print("Giraffe"); super.eat(food);
     }
 

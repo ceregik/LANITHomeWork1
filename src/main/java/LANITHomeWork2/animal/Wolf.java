@@ -9,7 +9,7 @@ public class Wolf extends  MeatEaters implements  Run,Swim,Voice{
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         System.out.print("wolf"); super.eat(food);
     }
 

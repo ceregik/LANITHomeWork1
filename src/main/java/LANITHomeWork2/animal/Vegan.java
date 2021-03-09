@@ -10,7 +10,7 @@ public abstract class Vegan extends Animal  {
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
 
         if (food instanceof Grass) {
             setSatiety(getSatiety()+ food.getSatiety());
@@ -18,6 +18,7 @@ public abstract class Vegan extends Animal  {
         }
         else{
             System.out.println(" don`t want eat "+ food.getName());
+            throw new WrongFoodException();
         }
     }
 

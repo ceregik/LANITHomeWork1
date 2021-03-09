@@ -12,7 +12,7 @@ public class Fish extends  MeatEaters implements  Swim{
 
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         System.out.print("fish"); super.eat(food);
     }
 

@@ -4,6 +4,9 @@ import LANITHomeWork2.animal.*;
 import LANITHomeWork2.food.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import static LANITHomeWork2.animal.Capacity.LITTLE;
 
 public class Zoo{
     public static void main(String[] args){
@@ -29,22 +32,39 @@ public class Zoo{
         for (Animal animal : animals){
             for (Food food : foods){
                 System.out.print(++i + " ");
-                animal.eat(food);
+                try {
+                    animal.eat(food);
+                } catch (WrongFoodException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
         Worker sam = new Worker("Sam");
 
-        Rabbit rabbit = new Rabbit("Lake",3,"rabbit");
-        Rabbit wolf = new Rabbit("Vace",7,"wolf");
+        Rabbit rabbit = new Rabbit("Laki",3,"rabbit");
+        Wolf wolf = new Wolf("Vace",7,"wolf");
+        Fox fox = new Fox("Fina", 6,"fox");
         Egg egg = new Egg();
         Pork pork = new Pork();
         Carrot carrot = new Carrot();
 
 
-        sam.feed(rabbit,egg);
-        sam.feed(wolf,pork);
-        sam.feed(wolf,carrot);
+        try {
+            sam.feed(rabbit,egg);
+        } catch (WrongFoodException e) {
+            e.printStackTrace();
+        }
+        try {
+            sam.feed(wolf,pork);
+        } catch (WrongFoodException e) {
+            e.printStackTrace();
+        }
+        try {
+            sam.feed(wolf,carrot);
+        } catch (WrongFoodException e) {
+            e.printStackTrace();
+        }
         System.out.println(sam.getVoice(rabbit));
         System.out.println(sam.getVoice(wolf));
         Swim [] pond = {
@@ -56,5 +76,14 @@ public class Zoo{
         for (Swim animal : pond){
             animal.swim();
         }
+
+        HashMap<String,Animal> h23  = new HashMap<>();
+        h23.put(wolf.getName(), wolf);
+        EnclosureForMeat one = new EnclosureForMeat(LITTLE);
+        one.addAnimal(wolf);
+        one.addAnimal(fox);
+        System.out.println(one.getWeightEnclosure());
+        one.deleteAnimal("bos");
+        System.out.println(one.getEnclosur());
     }
 }

@@ -10,7 +10,7 @@ public class Rabbit extends  Vegan implements  Run,Voice{
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
         System.out.print("Rabbit"); super.eat(food);
     }
 
