@@ -79,9 +79,13 @@ public class Zoo{
 
         HashMap<String,Animal> h23  = new HashMap<>();
         h23.put(wolf.getName(), wolf);
-        EnclosureForMeat one = new EnclosureForMeat(LITTLE);
-        one.addAnimal(wolf);
+        Enclosure one = new Enclosure(LITTLE);
         one.addAnimal(fox);
+        one.addAnimal(rabbit);
+        one.addAnimal(wolf);
+        Enclosure two = new Enclosure(LITTLE);
+        two.addAnimal(rabbit);
+        two.addAnimal(fox);
         System.out.println(one.getWeightEnclosure());
         one.deleteAnimal("bos");
         System.out.println(one.getEnclosur());
