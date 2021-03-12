@@ -45,7 +45,11 @@ public  class Enclosure<enclosur>{
     }
 
     public void deleteAnimal(String name){
+
         enclosur.remove(name);
+        if (enclosur.isEmpty()){
+            enclosurType = "";
+        }
     }
 
     public void getEnclosurAnimal(String name) {
